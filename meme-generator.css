@@ -1,0 +1,18 @@
+:root {
+    font-family: Helvetica;
+    font-size: 14px;
+    background-color: lightblue;
+}
+
+h1 {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+
+* {
+    font: inherit;
+}
+
+#meme-canvas {
+    width: 300px;
+}
