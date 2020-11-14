@@ -2,6 +2,7 @@
 name: 'Meme-Generator'
 description: 'Spin up your own meme-generator!'
 author: '@aaryanporwal'
+img: 'https://cloud-qmqu378mz.vercel.app/0image.png'
 ---
 
 # Meme-Generator
