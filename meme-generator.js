@@ -1,14 +1,6 @@
-let topTextInput;
-let bottomTextInput;
-let topTextSizeInput;
-let bottomTextSizeInput;
-let imageInput;
-let generateBtn;
-let canvas;
-let ctx;
-
 function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
-  let fontSize;
+  const canvas = document.getElementById('meme-canvas');
+  const ctx = canvas.getContext('2d');
 
   // Size canvas to image
   canvas.width = img.width;
@@ -25,7 +17,7 @@ function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   ctx.textAlign = 'center';
 
   // Top text font size
-  fontSize = canvas.width * topTextSize;
+  let fontSize = canvas.width * topTextSize;
   ctx.font = `${fontSize}px Impact`;
   ctx.lineWidth = fontSize / 20;
 
@@ -51,17 +43,16 @@ function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
 
 function init() {
   // Initialize variables
-  topTextInput = document.getElementById('top-text');
-  bottomTextInput = document.getElementById('bottom-text');
-  topTextSizeInput = document.getElementById('top-text-size-input');
-  bottomTextSizeInput = document.getElementById('bottom-text-size-input');
-  imageInput = document.getElementById('image-input');
-  generateBtn = document.getElementById('generate-btn');
-  canvas = document.getElementById('meme-canvas');
+  const topTextInput = document.getElementById('top-text');
+  const bottomTextInput = document.getElementById('bottom-text');
+  const topTextSizeInput = document.getElementById('top-text-size-input');
+  const bottomTextSizeInput = document.getElementById('bottom-text-size-input');
+  const imageInput = document.getElementById('image-input');
+  const generateBtn = document.getElementById('generate-btn');
+  // const canvas = document.getElementById('meme-canvas');
 
-  ctx = canvas.getContext('2d');
-  canvas.width = 0;
-  canvas.height = 0;
+  // canvas.width = 0;
+  // canvas.height = 0;
 
   // Default/Demo text
   topTextInput.value = 'Top\nValue';
@@ -82,5 +73,4 @@ function init() {
     reader.readAsDataURL(imageInput.files[0]);
   });
 }
-
 init();

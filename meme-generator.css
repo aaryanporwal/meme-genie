@@ -9,8 +9,8 @@ h1 {
     font-size: 30px;
 }
 
-* {
-    font: inherit;
+body {
+    margin: 10px;
 }
 
 #meme-canvas {
