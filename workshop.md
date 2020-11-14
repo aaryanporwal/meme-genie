@@ -6,13 +6,14 @@ author: '@aaryanporwal'
 
 # Meme-Generator
 
-Ever wanted to become a *meme lord*? Ever wanted to make cool memes and share it with the world?
+Ever wondered how to make memes? Or did you ever wanted to make your _own_ cool memes and share it with the world?
 
-Don't worry, today we'll be spinning up our own ***meme-generator***, or as I like to call it - 'A Meme-Genie'
+Then you're at the right place, today we'll be spinning up our own ***meme-generator***, or as I like to call it - 'The Meme-Genie'
 
 Let's take a look of how our meme-generator looks like:
 
 ![meme-generator demo](https://cloud-i6md9xxdx.vercel.app/0image.png)
+
 Source code can be found [here](https://repl.it/@aaryanporwal/Meme-generator).
 
 ## Part 1: Prerequisites
@@ -23,9 +24,9 @@ Basic knowledge of:
 2. CSS
 3. JavaScript
 
-## Part 2: Setting up the environment
+## Part 2: Setting Up The Environment
 
-We'll be using an online code editor called [repl.it](repl.it) for this workshop.
+We'll be using an online code editor called [repl.it](https://repl.it) for this workshop.
 
 To get started, go to [https://repl.it/languages/html](https://repl.it/languages/html). Your coding environment will spin up in just a few seconds!
 
@@ -33,7 +34,11 @@ You should see something like the following:
 
 ![Initial View](https://cloud-p7qnbqzo6.vercel.app/image.png)
 
-## Part 3: Building the project
+Now let's move on to the next part!
+
+![Excited doge](https://cloud-4560ajsyp.vercel.app/0giphy.gif)
+
+## Part 3: Building The Project
 
 ### 1) HTML
 
@@ -45,9 +50,14 @@ Let's first start by making a structure for our meme-generator website.
 
     ![Meme showing top text and bottom text](https://cloud-ejplvs3dg.vercel.app/0image.png)
 
-    For that we'll require two text fields in our website, to achieve that we'll use `<textarea>` tag in HTML.
+    For that we'll require two text fields in our website, to achieve that we'll use `<textarea>` tag in HTML:
 
-* Next, we'll need to take a meme template as an input, for that we'll use 
+    ```html
+    <textarea id="top-text"></textarea>
+    <textarea id="bottom-text"></textarea>
+    ```
+
+* Next, we'll need to take a meme template as an input, for that we'll use
   
   ```html
   <input type="file" id="image-input" accept="image/*">
@@ -105,14 +115,14 @@ Our final HTML file will look like:
 </html>
 ```
 
-Note that we have added the *Text Size* slider for now, but we'll understand how it works in JavaScript part.
+Note that we have added the *Text Size* slider which we'll use to increase or decrease the text size.
 You can take a look at how different input types work [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
 
 ### 2) CSS
 
 We'll add some basic styling to our website:
 
-```CSS 
+```CSS
 h1 {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     font-size: 30px;
@@ -131,7 +141,6 @@ body {
 So in this CSS code, we first change our heading's font and font size, then we apply a background color to our body, and at last we select the meme canvas by it's ID and set its width to 300 pixels.
 
 That's it! This is all the CSS we'll be doing in the workshop.
-
 
 ### 3) JavaScript
 
@@ -185,7 +194,6 @@ Now, in our `scripts.js` file:
 
   If you wanna learn more about the cool things `Canvas` can do, check out [this](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage) link.
 
-
 * Now, after our `generateMeme` function, add a [Window: DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event) event:
 
     ```javascript
@@ -220,15 +228,16 @@ Inside the event, add the following code:
       };
     };
     reader.readAsDataURL(imageInput.files[0]);
-  });
-}
 ```
+
+![Scared red panda](https://cloud-kb71t9prf.vercel.app/0giphy-2.gif)
+Don't be scared like the above ^ panda, let's break the code down:
 
 Code Explanation:
 
 In the `DOMContentLoaded()` event, we initialize our `topTextInput`, `bottomTextInput`, `topTextSizeInput`, `bottomTextSizeInput`, `imageInput` variables using `document.getElementById()` method which returns an `Element` object.
 
-Next, we give a default text (or value) to our `topTextInput` and `bottomTextInput` 
+Next, we give a default text (or value) to our `topTextInput` and `bottomTextInput`
 
 After that, we add an `EventListener` to the `generateBtn` which gets triggered on clicking Generate button.
 
@@ -315,7 +324,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 </summary>
 </details>
 
-
 **_And with this, we finish coding our Meme-Genie! Check out what you've just built!_**
 
 ![Final Output](https://cloud-8kdhhtdj0.vercel.app/0ezgif.com-gif-maker.gif)
@@ -328,10 +336,11 @@ Now that we have finished building a very basic website, we can add a lot of coo
 
 Here are some things you can try to add:
 
-1. Try to add colour pallettes, so that user can change topText/bottomText colour.
-2. Make a [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to create a nice layout.
-3. Add Share and Download buttons, to share your super awesome meme!
-
+1. Try to add [colour picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color), so that user can change topText/bottomText colour.
+2. Add a drag and drop feature, using the [HTML5 Drag and Drop API](https://web.dev/drag-and-drop/).
+3. Make a [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to create a nice layout.
+4. Use an API to fetch meme-templates, like the one provided by [ImgFlip](https://imgflip.com/api).
+5. Add Share and Download buttons, to share your super awesome meme!
 
 ## Part 5: The End
 
@@ -339,9 +348,24 @@ If you haven't created an account on [repl.it](https://repl.it), make sure you d
 
 If you still face difficulties in signing up watch [this](https://www.youtube.com/watch?v=Mtqp4CUepk0).
 
+### Some More Examples
 
-### Some more examples for you
+* [Ninivert](https://codepen.io/ninivert/pen/BpLKRx)
+* [Vox Media's Meme Generator](https://github.com/voxmedia/meme)
+* [Salt Bay Meme Generator](https://codepen.io/yelly/pen/demrxp)
 
-- [Ninivert](https://codepen.io/ninivert/pen/BpLKRx)
+### What Other Hack Club Hackers Made
 
-- [Navbar popping from the top example 1](https://repl.it/)
+* [Sam Poder](https://beautiful-languid-passive.glitch.me/) used the Unsplash API to get an image based on the Bottom Text!
+* [Khushraj Rathod](https://repl.it/@aaryanporwal/MemeGenie#index.html) built a meme generator that uses the ImgFlip API to fetch random meme templates!
+
+### Part 6: Sharing with the Community
+
+![Doge getting appreciation](https://cloud-jhccbrn2s.vercel.app/0tenor.gif)
+
+Now that you have finished building a website, you should share your beautiful creation—because your site is on the internet, you can share it with anyone who is also online! Remember, it's as easy as giving them your URL!
+
+You probably know the best ways to get in touch with your friends and family, but if you want to share your project with the world wide Hack Club community there is no better place to do that than on Slack.
+
+In a new tab, open and follow [these](https://slack.hackclub.com/) directions to sign-up for our Slack.
+Then, post the link to the `#ship` channel to share it with everyone!

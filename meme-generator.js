@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   const canvas = document.getElementById('meme-canvas');
   const ctx = canvas.getContext('2d');
@@ -41,7 +42,7 @@ function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   });
 }
 
-function init() {
+window.addEventListener('DOMContentLoaded', () => {
   // Initialize variables
   const topTextInput = document.getElementById('top-text');
   const bottomTextInput = document.getElementById('bottom-text');
@@ -49,11 +50,6 @@ function init() {
   const bottomTextSizeInput = document.getElementById('bottom-text-size-input');
   const imageInput = document.getElementById('image-input');
   const generateBtn = document.getElementById('generate-btn');
-  // const canvas = document.getElementById('meme-canvas');
-
-  // canvas.width = 0;
-  // canvas.height = 0;
-
   // Default/Demo text
   topTextInput.value = 'Top\nValue';
   bottomTextInput.value = 'Bottom\nValue';
@@ -66,11 +62,9 @@ function init() {
       const img = new Image();
       img.src = reader.result;
       img.onload = () => {
-        // eslint-disable-next-line max-len
         generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
       };
     };
     reader.readAsDataURL(imageInput.files[0]);
   });
-}
-init();
+});
